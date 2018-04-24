@@ -10,7 +10,5 @@
 / \/       %ul.nav.navbar-nav= render 'layouts/navigation_links'
 
 
-%nav.navbar.navbar-light.bg-faded
-  %a.navbar-brand Navbar
-  %ul.navbar-nav.mr-auto.collapse.navbar-collapse
-    = render 'layouts/nav_links_for_auth'
+%nav.navbar{:style => "background-color: #e3f2fd"}
+  = render 'layouts/nav_links_for_auth'
