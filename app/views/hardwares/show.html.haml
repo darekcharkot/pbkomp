@@ -1,0 +1,18 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @hardware.name
+%p
+  %b Model:
+  = @hardware.model
+%p
+  %b Sn:
+  = @hardware.sn
+%p
+  %b Describe:
+  = @hardware.describe
+
+= link_to 'Edit', edit_hardware_path(@hardware)
+\|
+= link_to 'Back', hardwares_path

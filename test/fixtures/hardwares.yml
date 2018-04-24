@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  type: 
+  model: MyString
+  sn: MyString
+  describe: MyText
+
+two:
+  type: 
+  model: MyString
+  sn: MyString
+  describe: MyText

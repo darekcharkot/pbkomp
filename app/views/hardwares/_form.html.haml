@@ -1,0 +1,22 @@
+= form_for @hardware do |f|
+  - if @hardware.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@hardware.errors.count, "error")} prohibited this hardware from being saved:"
+      %ul
+        - @hardware.errors.full_messages.each do |message|
+          %li= message
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :model
+    = f.text_field :model
+  .field
+    = f.label :sn
+    = f.text_field :sn
+  .field
+    = f.label :describe
+    = f.text_area :describe
+  .actions
+    = f.submit 'Save'
