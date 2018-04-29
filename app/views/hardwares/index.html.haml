@@ -6,7 +6,11 @@
       %th Nazwa
       %th Model
       %th S/N
-      %th Opis
+      %th Kod obcy
+      %th Kod własny
+      %th Cena zakupu brutto
+      %th Sprzedany?
+      %th Data dodania
       %th
       %th
       %th
@@ -17,7 +21,11 @@
         %td= hardware.name
         %td= hardware.model
         %td= hardware.sn
-        %td= hardware.describe
+        %td= hardware.foreign_code
+        %td= hardware.own_code
+        %td= hardware.buy_brutto
+        %td= hardware.buyed
+        %td= hardware.created_at.strftime("%Y-%m-%d")
         %td= link_to 'Pokaż', hardware
         %td= link_to 'Edytuj', edit_hardware_path(hardware)
         %td= link_to 'Usuń', hardware, method: :delete, data: { confirm: 'Jesteś pewien?' }
