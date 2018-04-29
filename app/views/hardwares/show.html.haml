@@ -1,18 +1,22 @@
-%p#notice= notice
+.card{:style => "width: 20rem;"}
+  .card-body
+    %p#notice= notice
 
-%p
-  %b Name:
-  = @hardware.name
-%p
-  %b Model:
-  = @hardware.model
-%p
-  %b Sn:
-  = @hardware.sn
-%p
-  %b Describe:
-  = @hardware.describe
+    %p{:style => "margin-bottom: 35px"}
+      %b.card-text{:style => "font-size: 1.625rem; text-decoration: underline; margin-bottom: 5px;"}
+        = @hardware.name
+    %p
+      %span{:style => "font-size: 1.25rem"} Model:
+      %b.card-text{:style => "font-size: 1rem"}
+        = @hardware.model
+    %p
+      %span{:style => "font-size: 1.25rem"} S/N:
+      %b.card-text{:style => "font-size: 1rem"}
+        = @hardware.sn
+    %p
+      %span{:style => "font-size: 1.25rem"} Opis:
+      %b.card-text{:style => "font-size: 1rem"}
+        = @hardware.describe
 
-= link_to 'Edit', edit_hardware_path(@hardware)
-\|
-= link_to 'Back', hardwares_path
+    = link_to 'Edytuj', edit_hardware_path(@hardware), class: 'btn btn-info'
+    = link_to 'Powrót', hardwares_path, class: 'btn btn-outline-warning'

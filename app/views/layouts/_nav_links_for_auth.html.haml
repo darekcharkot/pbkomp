@@ -1,10 +1,10 @@
 %ul.navbar-nav.mr-auto
 	/ %li.nav-item= link_to 'Home', root_path
-	%li.nav-item= link_to 'Hardware list', hardwares_path
+	%li.nav-item= link_to 'Lista urządzeń', hardwares_path
 %ul.navbar-nav.mr-right
 	- if user_signed_in?
-		%li.nav-item= link_to 'Edit account', edit_user_registration_path
-		%li.nav-item= link_to 'Sign out', destroy_user_session_path, :method=>'delete'
+		%li.nav-item= link_to 'Edytuj konto', edit_user_registration_path
+		%li.nav-item= link_to 'Wyloguj', destroy_user_session_path, :method=>'delete'
 	- else
-		%li.nav-item= link_to 'Sign in', new_user_session_path
-		%li.nav-item= link_to 'Sign up', new_user_registration_path
+		%li.nav-item= link_to 'Zaloguj', new_user_session_path
+		%li.nav-item= link_to 'Zarejestruj', new_user_registration_path

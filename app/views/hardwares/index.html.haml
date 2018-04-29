@@ -1,12 +1,12 @@
-%h1 Listing hardwares
+%h1 Lista urządzeń
 
 %table.table.table-inverse.table-striped.table-hover.text-center
   %thead
     %tr
-      %th Name
+      %th Nazwa
       %th Model
-      %th Sn
-      %th Describe
+      %th S/N
+      %th Opis
       %th
       %th
       %th
@@ -18,10 +18,10 @@
         %td= hardware.model
         %td= hardware.sn
         %td= hardware.describe
-        %td= link_to 'Show', hardware
-        %td= link_to 'Edit', edit_hardware_path(hardware)
-        %td= link_to 'Destroy', hardware, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Pokaż', hardware
+        %td= link_to 'Edytuj', edit_hardware_path(hardware)
+        %td= link_to 'Usuń', hardware, method: :delete, data: { confirm: 'Jesteś pewien?' }
 
 %br
 
-= link_to 'New Hardware', new_hardware_path
+= link_to 'Dodaj nowe urządzenie', new_hardware_path
