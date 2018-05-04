@@ -2,9 +2,12 @@
 	/ %li.nav-item= link_to 'Home', root_path
 	%li.nav-item= link_to 'Lista urządzeń', hardwares_path
 %ul.navbar-nav.mr-right
-	- if user_signed_in?
-		%li.nav-item= link_to 'Edytuj konto', edit_user_registration_path
-		%li.nav-item= link_to 'Wyloguj', destroy_user_session_path, :method=>'delete'
+	- if current_user
+		- if User.where(params[:email]) == 'darcoch@onet.eu' && User.where(params[:encrypted_password]) =='pantera7'
+			%li.nav-item= link_to 'Wyloguj', destroy_user_session_path, :method=>'delete'
+			%li.nav-item= link_to 'Edytuj konto', edit_user_registration_path
+		- else
+			%li.nav-item= link_to 'Wyloguj', destroy_user_session_path, :method=>'delete'
 	- else
 		%li.nav-item= link_to 'Zaloguj', new_user_session_path
-		%li.nav-item= link_to 'Zarejestruj', new_user_registration_path
+		/ %li.nav-item= link_to 'Zarejestruj', new_user_registration_path

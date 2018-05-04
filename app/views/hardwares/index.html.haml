@@ -8,7 +8,6 @@
       %th S/N
       %th Kod obcy
       %th Kod własny
-      %th Cena zakupu brutto
       %th Sprzedany?
       %th Data dodania
       %th
@@ -23,7 +22,6 @@
         %td= hardware.sn
         %td= hardware.foreign_code
         %td= hardware.own_code
-        %td= hardware.buy_brutto
         %td= hardware.buyed
         %td= hardware.created_at.strftime("%Y-%m-%d")
         %td= link_to 'Pokaż', hardware
