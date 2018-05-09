@@ -1,5 +1,5 @@
 pl:
-  name: "Nazwa"
+  name: "Typ urządzenia"
   model: "Model"
   sn: "Nr seryjny"
   foreign_code: "Numer obcy"
