@@ -29,7 +29,7 @@ class HardwaresController < ApplicationController
 
     respond_to do |format|
       if @hardware.save
-        format.html { redirect_to @hardware, notice: 'Hardware was successfully created.' }
+        format.html { redirect_to @hardware, notice: 'Urządzenie zostało dodane pomyślnie.' }
         format.json { render :show, status: :created, location: @hardware }
       else
         format.html { render :new }
@@ -43,7 +43,7 @@ class HardwaresController < ApplicationController
   def update
     respond_to do |format|
       if @hardware.update(hardware_params)
-        format.html { redirect_to @hardware, notice: 'Hardware was successfully updated.' }
+        format.html { redirect_to @hardware, notice: 'Urządzenie zostało zaktualizowane pomyślnie.' }
         format.json { render :show, status: :ok, location: @hardware }
       else
         format.html { render :edit }
@@ -57,7 +57,7 @@ class HardwaresController < ApplicationController
   def destroy
     @hardware.destroy
     respond_to do |format|
-      format.html { redirect_to hardwares_url, notice: 'Hardware was successfully destroyed.' }
+      format.html { redirect_to hardwares_url, notice: 'Urządzenie zostało usunięte.' }
       format.json { head :no_content }
     end
   end
@@ -71,7 +71,7 @@ class HardwaresController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def hardware_params
       params.require(:hardware).permit(:name, :model, :sn, :foreign_code, :own_code, :buy_brutto,
-                     :buyed, :created_at, :describe, :processor, :ram, :disk, :screen, :dvd, :video_card, 
+                     :buyed, :created_at, :describe, :processor, :ram, :disk, :screen, :dvd, :video_card,
                      :battery, :operating_system, :warranty)
     end
 end
