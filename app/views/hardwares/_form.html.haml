@@ -6,58 +6,64 @@
         %ul
           - @hardware.errors.full_messages.each do |message|
             %li= message
-
-    .form-group
-      .field
-        = f.label t :name
-        = f.text_field :name, class: 'form-control', :placeholder => "Typ urządzenia"
-      .field
-        = f.label t :model
-        = f.text_field :model, class: 'form-control', :placeholder => "Model urządzenia"
-      .field
-        = f.label t :sn
-        = f.text_field :sn, class: 'form-control', :placeholder => "Numer seryjny"
-      .field
-        = f.label t :foreign_code
-        = f.text_field :foreign_code, class: 'form-control', :placeholder => "Numer obcy"
-      .field
-        = f.label t :own_code
-        = f.text_field :own_code, class: 'form-control', :placeholder => "Numer własny"
-      .field
-        = f.label t :buy_brutto
-        = f.text_field :buy_brutto, class: 'form-control', :placeholder => "Cena zakupu brutto"
-      .field
-        = f.label t :buyed
-        = f.text_field :buyed, class: 'form-control', :placeholder => "Czy został sprzedany? Tak | Nie"
-      .field
-        = f.label t :processor
-        = f.text_field :processor, class: 'form-control', :placeholder => "Procesor"
-      .field
-        = f.label t :ram
-        = f.text_field :ram, class: 'form-control', :placeholder => "Pamięć RAM"
-      .field
-        = f.label t :disk
-        = f.text_field :disk, class: 'form-control', :placeholder => "Dysk"
-      .field
-        = f.label t :screen
-        = f.text_field :screen, class: 'form-control', :placeholder => "Matryca"
-      .field
-        = f.label t :dvd
-        = f.text_field :dvd, class: 'form-control', :placeholder => "Napęd DVD"
-      .field
-        = f.label t :video_card
-        = f.text_field :video_card, class: 'form-control', :placeholder => "Karta graficzna"
-      .field
-        = f.label t :battery
-        = f.text_field :battery, class: 'form-control', :placeholder => "Bateria"
-      .field
-        = f.label t :operating_system
-        = f.text_field :operating_system, class: 'form-control', :placeholder => "System operacyjny"
-      .field
-        = f.label t :warranty
-        = f.text_field :warranty, class: 'form-control', :placeholder => "Gwarancja"
-      .field
-        = f.label t :describe
-        = f.text_area :describe, class: 'form-control', :placeholder => "Dodatkowe informacje"
-      .actions
+    
+    .row
+      .col-md-6
+        .form-group
+          .field
+            = f.label t :name
+            = f.text_field :name, class: 'form-control', :placeholder => "Typ urządzenia"
+          .field
+            = f.label t :model
+            = f.text_field :model, class: 'form-control', :placeholder => "Model urządzenia"
+          .field
+            = f.label t :sn
+            = f.text_field :sn, class: 'form-control', :placeholder => "Numer seryjny"
+          .field
+            = f.label t :foreign_code
+            = f.text_field :foreign_code, class: 'form-control', :placeholder => "Numer obcy"
+          .field
+            = f.label t :own_code
+            = f.text_field :own_code, class: 'form-control', :placeholder => "Numer własny"
+          .field
+            = f.label t :buy_brutto
+            = f.text_field :buy_brutto, class: 'form-control', :placeholder => "Cena zakupu brutto"
+          .field
+            = f.label t :buyed
+            = f.text_field :buyed, class: 'form-control', :placeholder => "Czy został sprzedany? Tak | Nie"
+      .col-md-6
+        .form-group
+          .field
+            = f.label t :processor
+            = f.text_field :processor, class: 'form-control', :placeholder => "Procesor"
+          .field
+            = f.label t :ram
+            = f.text_field :ram, class: 'form-control', :placeholder => "Pamięć RAM"
+          .field
+            = f.label t :disk
+            = f.text_field :disk, class: 'form-control', :placeholder => "Dysk"
+          .field
+            = f.label t :screen
+            = f.text_field :screen, class: 'form-control', :placeholder => "Matryca"
+          .field
+            = f.label t :dvd
+            = f.text_field :dvd, class: 'form-control', :placeholder => "Napęd DVD"
+          .field
+            = f.label t :video_card
+            = f.text_field :video_card, class: 'form-control', :placeholder => "Karta graficzna"
+          .field
+            = f.label t :battery
+            = f.text_field :battery, class: 'form-control', :placeholder => "Bateria"
+          .field
+            = f.label t :operating_system
+            = f.text_field :operating_system, class: 'form-control', :placeholder => "System operacyjny"
+          .field
+            = f.label t :warranty
+            = f.text_field :warranty, class: 'form-control', :placeholder => "Gwarancja"
+    .row
+      .col-md-12  
+        .field
+          = f.label t :describe
+          = f.text_area :describe, class: 'form-control', :placeholder => "Dodatkowe informacje"
+        .actions
         = f.submit 'Dodaj urządzenie', class: 'btn btn-success btn-lg'

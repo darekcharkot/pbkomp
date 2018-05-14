@@ -1,61 +1,82 @@
-.card{:style => "width: 45rem;"}
+.card
   .card-body
     %p#notice= notice
 
     %p{:style => "margin-bottom: 35px"}
       %b.card-text{:style => "font-size: 1.625rem; text-decoration: underline; margin-bottom: 5px;"}
         = @hardware.name
-    .row
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Model:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.model
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} S/N:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.sn
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Kod obcy:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.foreign_code
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Kod własny:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.own_code
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Dodano:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.created_at.strftime("%Y-%m-%d")
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Cena zakupu brutto:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.buy_brutto
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Sprzedany?:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.buyed
-      %h4.col-md-12.center{:style => "margin-bottom: 0.7rem; margin: 12px 10px; color: #4a79b1"} Parametry:
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Procesor:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.processor
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Pamięć RAM:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.ram
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Dysk HDD/SSD:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.disk
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Matryca:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.screen
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Napęd DVD:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.dvd
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Karta graficzna:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.video_card
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Bateria:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.battery
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} System:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.operating_system
-      %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Gwarancja:
-      %b.card-text.col-md-7{:style => "font-size: 1rem"}
-        = @hardware.warranty
-    %p{:style => "font-size: 1.25rem; margin-top: 35px"} Informacje:
+    .row{:style => "background-color: #cccccc; padding: 20px 10px;"}
+      .col-md-6
+        .row
+          %h4.col-md-12{:style => "margin-bottom: 0.7rem; margin: 12px 10px; color: #4a79b1;"} Informacje:
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Model:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.model
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} S/N:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.sn
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Kod obcy:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.foreign_code
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Kod własny:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.own_code
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Dodano:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.created_at.strftime("%Y-%m-%d")
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Cena zakupu brutto:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.buy_brutto
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Sprzedany?:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.buyed
+      .col-md-6
+        .row
+          %h4.col-md-12.center{:style => "margin-bottom: 0.7rem; margin: 12px 10px; color: #4a79b1"} Parametry:
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Procesor:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.processor
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Pamięć RAM:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.ram
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Dysk HDD/SSD:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.disk
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Matryca:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.screen
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Napęd DVD:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.dvd
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Karta graficzna:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.video_card
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Bateria:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.battery
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} System:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.operating_system
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Gwarancja:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.warranty
+    %p{:style => "font-size: 1.25rem; margin-top: 35px"} Dodatkowe informacje:
     %p{:style => "border: 2px #676767 solid; box-shadow: 5px 5px 7px #898989; padding: 12px; margin-bottom: 35px"}
       %span{:style => "font-size: 1.25rem"}
       %span.card-text{:style => "font-size: 1rem"}
