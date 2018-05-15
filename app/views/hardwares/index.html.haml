@@ -5,11 +5,11 @@
     %tr
       %th Nazwa
       %th Model
-      %th S/N
       %th Kod obcy
       %th Kod własny
       %th Sprzedany?
-      %th Data dodania
+      %th Dokument zakupu
+      %th Data zakupu
       %th{:colspan => "3"} Co chcesz zrobić?
 
   %tbody
@@ -17,11 +17,11 @@
       %tr
         %td= hardware.name
         %td= hardware.model
-        %td= hardware.sn
         %td= hardware.foreign_code
         %td= hardware.own_code
-        %td= hardware.buyed
-        %td= hardware.created_at.strftime("%Y-%m-%d")
+        %td= hardware.sold
+        %td= hardware.proof
+        %td= hardware.buy_date.strftime("%Y-%m-%d")
         %td= link_to 'Pokaż', hardware
         %td= link_to 'Edytuj', edit_hardware_path(hardware)
         %td= link_to 'Usuń', hardware, method: :delete, data: { confirm: 'Jesteś pewien?' }

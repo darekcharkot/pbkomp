@@ -2,9 +2,14 @@
   .card-body
     %p#notice= notice
 
-    %p{:style => "margin-bottom: 35px"}
-      %b.card-text{:style => "font-size: 1.625rem; text-decoration: underline; margin-bottom: 5px;"}
+    %p
+      %b.card-text{:style => "font-size: 1.625rem; text-decoration: underline;"}
         = @hardware.name
+      .row
+        .col-md-12
+          %h7.col-md-3 Dodany:
+          %h7.card-text.col-md-9
+            = @hardware.created_at.strftime("%Y-%m-%d")
     .row{:style => "background-color: #cccccc; padding: 20px 10px;"}
       .col-md-6
         .row
@@ -26,17 +31,21 @@
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
             = @hardware.own_code
         .row
-          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Dodano:
-          %b.card-text.col-md-7{:style => "font-size: 1rem"}
-            = @hardware.created_at.strftime("%Y-%m-%d")
-        .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Cena zakupu brutto:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
             = @hardware.buy_brutto
         .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Dokument zakupu:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.proof
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Data zakupu:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            = @hardware.buy_date.strftime("%Y-%m-%d")
+        .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Sprzedany?:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
-            = @hardware.buyed
+            = @hardware.sold
       .col-md-6
         .row
           %h4.col-md-12.center{:style => "margin-bottom: 0.7rem; margin: 12px 10px; color: #4a79b1"} Parametry:

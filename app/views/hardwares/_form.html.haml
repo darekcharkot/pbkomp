@@ -1,4 +1,4 @@
-.card{:style => "width: 45rem;margin: 25px;padding: 15px; background-color: #cccccc;"}
+.card{:style => "margin: 25px;padding: 15px; background-color: #cccccc;"}
   = form_for @hardware do |f|
     - if @hardware.errors.any?
       #error_explanation
@@ -6,7 +6,7 @@
         %ul
           - @hardware.errors.full_messages.each do |message|
             %li= message
-    
+
     .row
       .col-md-6
         .form-group
@@ -29,8 +29,14 @@
             = f.label t :buy_brutto
             = f.text_field :buy_brutto, class: 'form-control', :placeholder => "Cena zakupu brutto"
           .field
-            = f.label t :buyed
-            = f.text_field :buyed, class: 'form-control', :placeholder => "Czy został sprzedany? Tak | Nie"
+            = f.label t :proof
+            = f.text_field :proof, class: 'form-control', :placeholder => "Dokument zakupu"
+          .field
+            = f.label t :buy_date
+            = f.text_field :buy_date, class: 'form-control', :placeholder => "Data zakupu"
+          .field
+            = f.label t :sold
+            = f.text_field :sold, class: 'form-control', :placeholder => "Czy został sprzedany? Tak | Nie"
       .col-md-6
         .form-group
           .field
@@ -61,7 +67,7 @@
             = f.label t :warranty
             = f.text_field :warranty, class: 'form-control', :placeholder => "Gwarancja"
     .row
-      .col-md-12  
+      .col-md-12
         .field
           = f.label t :describe
           = f.text_area :describe, class: 'form-control', :placeholder => "Dodatkowe informacje"
