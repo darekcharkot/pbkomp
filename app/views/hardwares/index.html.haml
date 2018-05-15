@@ -21,7 +21,7 @@
         %td= hardware.own_code
         %td= hardware.sold
         %td= hardware.proof
-        %td= hardware.buy_date
+        %td= hardware.buy_date.strftime("%Y-%m-%d")
         %td= link_to 'Pokaż', hardware
         %td= link_to 'Edytuj', edit_hardware_path(hardware)
         %td= link_to 'Usuń', hardware, method: :delete, data: { confirm: 'Jesteś pewien?' }
