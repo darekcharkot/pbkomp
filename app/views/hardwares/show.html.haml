@@ -32,7 +32,7 @@
         .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Cena zakupu brutto:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
-            = @hardware.buy_brutto
+            = number_to_currency(@hardware.buy_brutto, locale: :pl, :unit => 'zł ', format: "%n %u", :delimiter => " ")
         .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Sprzedany?:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
