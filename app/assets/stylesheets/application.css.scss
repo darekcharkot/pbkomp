@@ -14,10 +14,32 @@
  *= require_self
  */
 
-.nav-item {
-	display: block;
+.mr-left>.nav-item>a {
+  display: block;
 	font-size: 1.5em;
-	color: magenta;
+	color: #B4FFF9;
+}
+
+.mr-left>.nav-item :hover {
+  background-color: transparent;
+  color: #dadada;
+  text-decoration: none;
+}
+
+.mr-right>.nav-item {
+  font-size: 1.5em;
+  a {
+    color: #B4FFF9;
+  }
+  :hover {
+    background-color: transparent;
+    color: #dadada;
+    text-decoration: none;
+  }
+}
+
+.hello {
+color: #C489FB;
 }
 
 body {
