@@ -41,7 +41,10 @@
         .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Data zakupu:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
-            = @hardware.buy_date.strftime("%Y-%m-%d")
+            - if @hardware.buy_date.nil?
+              = @hardware.buy_date.to_s
+            - else 
+              = @hardware.buy_date.strftime("%Y-%m-%d")
         .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Sprzedany?:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
