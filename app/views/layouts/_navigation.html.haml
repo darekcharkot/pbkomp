@@ -1,2 +1,6 @@
-%nav.navbar.navbar-dark.bg-dark
-  = render 'layouts/nav_links_for_auth'
+.container-fluid
+	%nav.navbar.navbar-dark.bg-dark.navbar-expand-sm
+		%button.navbar-toggler{"aria-controls" => "nav-content", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#nav-content", "data-toggle" => "collapse", :type => "button"}
+			%span.navbar-toggler-icon
+		%a.navbar-brand.bg-dark{:href => pages_home_path} PBKOMP
+		= render 'layouts/nav_links_for_auth'

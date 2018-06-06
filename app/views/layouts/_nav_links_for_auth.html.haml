@@ -1,20 +1,32 @@
-%ul.navbar-nav.mr-left
-	- if current_user
-		%li.nav-item.active= link_to 'Start', root_path
-		%li.nav-item= link_to 'Usługi', pages_services_path
-		%li.nav-item= link_to 'Cennik', pages_pricelist_path
-		%li.nav-item= link_to 'Technologie', pages_technology_path
-		%li.nav-item= link_to 'Kontakt', pages_contact_path
-		%li.nav-item= link_to 'Lista urządzeń', hardwares_path
-	- else
-		%li.nav-item= link_to 'Start', root_path
-		%li.nav-item= link_to 'Usługi', pages_services_path
-		%li.nav-item= link_to 'Cennik', pages_pricelist_path
-		%li.nav-item= link_to 'Technologie', pages_technology_path
-		%li.nav-item= link_to 'Kontakt', pages_contact_path
-%ul.navbar-nav.mr-right
-	- if current_user
-		%li.nav-item.hello= "Witaj, #{current_user.email}"
-		%li.nav-item= link_to 'Wyloguj', destroy_user_session_path, :method=>'delete'
-	- else
-		%li.nav-item= link_to 'Zaloguj', new_user_session_path
+#nav-content.collapse.navbar-collapse
+	%ul.navbar-nav.text-uppercase
+		- if current_user
+			%li.nav-item
+				%a.nav-link= link_to 'Start', root_path
+			%li.nav-item
+				%a.nav-link= link_to 'Usługi', pages_services_path
+			%li.nav-item
+				%a.nav-link= link_to 'Cennik', pages_pricelist_path
+			%li.nav-item
+				%a.nav-link= link_to 'Technologie', pages_technology_path
+			%li.nav-item
+				%a.nav-link= link_to 'Kontakt', pages_contact_path
+			%li.nav-item
+				%a.nav-link= link_to 'Lista urządzeń', hardwares_path
+		- else
+			%li.nav-item
+				%a.nav-link= link_to 'Start', root_path
+			%li.nav-item
+				%a.nav-link= link_to 'Usługi', pages_services_path
+			%li.nav-item
+				%a.nav-link= link_to 'Cennik', pages_pricelist_path
+			%li.nav-item
+				%a.nav-link= link_to 'Technologie', pages_technology_path
+			%li.nav-item
+				%a.nav-link= link_to 'Kontakt', pages_contact_path
+	%ul.navbar-nav.ml-auto
+		- if current_user
+			%li.nav-item.hello= "Witaj, #{current_user.email}"
+			%li.nav-item= link_to 'Wyloguj', destroy_user_session_path, :method=>'delete'
+		- else
+			%li.nav-item= link_to 'Zaloguj', new_user_session_path
