@@ -76,3 +76,17 @@ color: #C489FB;
 body {
   background-color: #AFB8B4;
 }
+
+.paragraph {
+  margin-left: 0.83em;
+}
+
+.rodo {
+  font-size: 1.2em;
+  p, ol {
+    font-size: 1.1em;
+    li {
+      padding-top: 1em;
+    }
+  }
+}
