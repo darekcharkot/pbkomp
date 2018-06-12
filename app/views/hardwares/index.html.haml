@@ -1,5 +1,8 @@
 %h1 Lista urządzeń
-
+%p 
+  Download:
+  = link_to "CSV", hardwares_path(format: "csv") |
+  = link_to "Excel", hardwares_path(format: "xls")
 %table.table.table-inverse.table-striped.table-hover.text-center.table-responsive-lg
   %thead.thead-dark
     %tr

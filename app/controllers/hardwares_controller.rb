@@ -5,7 +5,12 @@ class HardwaresController < ApplicationController
   # GET /hardwares
   # GET /hardwares.json
   def index
-    @hardwares = Hardware.all
+    @hardwares = Hardware.all.order(:created_at)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @hardwares.to_csv }
+      format.xls 
+    end
   end
 
   # GET /hardwares/1
@@ -30,10 +35,8 @@ class HardwaresController < ApplicationController
     respond_to do |format|
       if @hardware.save
         format.html { redirect_to @hardware, notice: 'Urządzenie zostało dodane pomyślnie.' }
-        format.json { render :show, status: :created, location: @hardware }
       else
         format.html { render :new }
-        format.json { render json: @hardware.errors, status: :unprocessable_entity }
       end
     end
   end

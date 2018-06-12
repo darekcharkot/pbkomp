@@ -1,0 +1,87 @@
+!!! XML
+%workbook{:xmlns => "urn:schemas-microsoft-com:office:spreadsheet", "xmlns:html" => "http://www.w3.org/TR/REC-html40", "xmlns:o" => "urn:schemas-microsoft-com:office:office", "xmlns:ss" => "urn:schemas-microsoft-com:office:spreadsheet", "xmlns:x" => "urn:schemas-microsoft-com:office:excel"}
+  %worksheet{"ss:name" => "Sheet1"}
+    %table
+      %row
+        %cell
+          %data{"ss:type" => "String"}= "Id"
+        %cell
+          %data{"ss:type" => "String"}= "Typ urządzenia"
+        %cell
+          %data{"ss:type" => "String"}= "Model"
+        %cell
+          %data{"ss:type" => "String"}= "Nr seryjny"
+        %cell
+          %data{"ss:type" => "String"}= "Informacje"
+        %cell
+          %data{"ss:type" => "String"}= "Kod obcy"
+        %cell
+          %data{"ss:type" => "String"}= "Kod własny"
+        %cell
+          %data{"ss:type" => "String"}= "Cena sprzedaży brutto"
+        %cell
+          %data{"ss:type" => "String"}= "Czy sprzedany"
+        %cell
+          %data{"ss:type" => "String"}= "Procesor"
+        %cell
+          %data{"ss:type" => "String"}= "RAM"
+        %cell
+          %data{"ss:type" => "String"}= "Dysk"
+        %cell
+          %data{"ss:type" => "String"}= "Wyswietlacz"
+        %cell
+          %data{"ss:type" => "String"}= "DVD"
+        %cell
+          %data{"ss:type" => "String"}= "Karta wideo"
+        %cell
+          %data{"ss:type" => "String"}= "Bateria"
+        %cell
+          %data{"ss:type" => "String"}= "System operacyjny"
+        %cell
+          %data{"ss:type" => "String"}= "Gwarancja"
+        %cell
+          %data{"ss:type" => "String"}= "Dowód zakupu"
+        %cell
+          %data{"ss:type" => "String"}= "Data zakupu"
+      - @hardwares.each do |hardware|
+        %row
+          %cell
+            %data{"ss:type" => "Number"}= hardware.id
+          %cell
+            %data{"ss:type" => "String"}= hardware.name
+          %cell
+            %data{"ss:type" => "String"}= hardware.model
+          %cell
+            %data{"ss:type" => "String"}= hardware.sn
+          %cell
+            %data{"ss:type" => "Text"}= hardware.describe
+          %cell
+            %data{"ss:type" => "String"}= hardware.foreign_code
+          %cell
+            %data{"ss:type" => "String"}= hardware.own_code
+          %cell
+            %data{"ss:type" => "String"}= hardware.buy_brutto
+          %cell
+            %data{"ss:type" => "String"}= hardware.sold
+          %cell
+            %data{"ss:type" => "String"}= hardware.processor
+          %cell
+            %data{"ss:type" => "String"}= hardware.ram
+          %cell
+            %data{"ss:type" => "String"}= hardware.disk
+          %cell
+            %data{"ss:type" => "String"}= hardware.screen
+          %cell
+            %data{"ss:type" => "String"}= hardware.dvd
+          %cell
+            %data{"ss:type" => "String"}= hardware.video_card
+          %cell
+            %data{"ss:type" => "String"}= hardware.battery
+          %cell
+            %data{"ss:type" => "String"}= hardware.operating_system
+          %cell
+            %data{"ss:type" => "String"}= hardware.warranty
+          %cell
+            %data{"ss:type" => "String"}= hardware.proof
+          %cell
+            %data{"ss:type" => "Datetime"}= hardware.buy_date
