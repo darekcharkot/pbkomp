@@ -9,7 +9,7 @@ class HardwaresController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data @hardwares.to_csv }
-      format.xls 
+      format.xlsx 
     end
   end
 

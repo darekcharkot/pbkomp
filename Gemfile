@@ -39,6 +39,11 @@ gem 'devise'
 gem 'rails_layout'
 gem "haml", '>= 2.2.0'
 
+# gem to genertae xlsx file
+gem 'rubyzip', '>= 1.2.1'
+gem 'axlsx', git: 'https://github.com/randym/axlsx.git', ref: 'c8ac844'
+gem 'axlsx_rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
