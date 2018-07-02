@@ -9,7 +9,12 @@ class HardwaresController < ApplicationController
     respond_to do |format|
       format.html
       format.csv { send_data @hardwares.to_csv }
-      format.xlsx 
+      format.xlsx
+      format.pdf do
+        render pdf: "Urządzenia w salonie",
+        template: "hardwares/index.html.haml",
+        layout: 'pdf.html.haml'
+      end
     end
   end
 
