@@ -26,7 +26,7 @@
 				%a.nav-link= link_to 'Kontakt', pages_contact_path
 	%ul.navbar-nav.ml-auto
 		- if current_user
-			%li.nav-item.hello= "Witaj, #{current_user.email}"
+			%li.nav-item.hello= "Witaj, #{current_user.nick}"
 			%li.nav-item= link_to 'Wyloguj', destroy_user_session_path, :method=>'delete'
 		- else
 			%li.nav-item= link_to 'Zaloguj', new_user_session_path
