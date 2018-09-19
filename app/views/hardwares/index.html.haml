@@ -1,11 +1,12 @@
 %h1 Lista urządzeń
 %p 
   Pobierz:
-  = link_to "Plik CSV", hardwares_path(format: "csv")
+  = link_to "Plik Excel", hardwares_path(format: "xlsx"), class: 'btn btn-outline-info btn-xm action_color'
   |
-  = link_to "Plik Excel", hardwares_path(format: "xlsx")
+  = link_to "Plik CSV", hardwares_path(format: "csv"), class: 'btn btn-outline-info btn-xm action_color'
   |
-  = link_to "Plik PDF", hardwares_path(format: "pdf")
+  = link_to "Plik PDF", hardwares_path(format: "pdf"), class: 'btn btn-outline-info btn-xm action_color'
+= button_to 'Dodaj nowe urządzenie', new_hardware_path, method: :get, class: 'btn btn-success btn-lg add_hardware_button margin_bottom_15'
 %table.table.table-inverse.table-striped.table-hover.text-center.table-responsive-lg
   %thead.thead-dark
     %tr
@@ -31,10 +32,10 @@
           %td= hardware.buy_date
         - else 
           %td= hardware.buy_date.strftime("%Y-%m-%d")
-        %td= link_to 'Pokaż', hardware
-        %td= link_to 'Edytuj', edit_hardware_path(hardware)
-        %td= link_to 'Usuń', hardware, method: :delete, data: { confirm: 'Jesteś pewien?' }
+        %td= button_to 'Pokaż', hardware, method: :get, class: 'btn btn-info btn-xm action_color'
+        %td= button_to 'Edytuj', edit_hardware_path(hardware), method: :get, class: 'btn btn-warning btn-xm action_color'
+        %td= button_to 'Usuń', hardware, method: :delete, data: { confirm: 'Jesteś pewien?' }, method: :delete, class: 'btn btn-danger btn-xm action_color'
 
 %br
 
-= link_to 'Dodaj nowe urządzenie', new_hardware_path
+= button_to 'Dodaj nowe urządzenie', new_hardware_path, method: :get, class: 'btn btn-success btn-lg add_hardware_button'
