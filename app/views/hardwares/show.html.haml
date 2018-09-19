@@ -49,6 +49,13 @@
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Sprzedany?:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
             = @hardware.sold
+        .row
+          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Data sprzedaży:
+          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+            - if @hardware.sell_date.nil?
+              = @hardware.sell_date
+            - else 
+              = @hardware.sell_date.strftime("%Y-%m-%d")
       .col-md-6
         .row
           %h4.col-md-12.center{:style => "margin-bottom: 0.7rem; margin: 12px 10px; color: #4a79b1"} Parametry:
@@ -87,7 +94,7 @@
         .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Gwarancja:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
-            = @hardware.warranty
+            = @hardware.warranty + " miesiące"
     %p{:style => "font-size: 1.25rem; margin-top: 35px"} Dodatkowe informacje:
     %p{:style => "border: 2px #676767 solid; box-shadow: 5px 5px 7px #898989; padding: 12px; margin-bottom: 35px"}
       %span{:style => "font-size: 1.25rem"}

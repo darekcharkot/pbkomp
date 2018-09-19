@@ -14,7 +14,7 @@
       %th Model
       %th Kod obcy
       %th Kod własny
-      %th Sprzedany?
+      %th Data sprzedaży
       %th Dokument zakupu
       %th Data zakupu
       %th{:colspan => "3"} Co chcesz zrobić?
@@ -26,7 +26,10 @@
         %td= hardware.model
         %td= hardware.foreign_code
         %td= hardware.own_code
-        %td= hardware.sold
+        - if hardware.sell_date.nil?
+          %td= hardware.sell_date
+        - else 
+          %td= hardware.sell_date.strftime("%Y-%m-%d")
         %td= hardware.proof
         - if hardware.buy_date.nil?
           %td= hardware.buy_date

@@ -37,6 +37,9 @@
           .field
             = f.label t :sold
             = f.text_field :sold, class: 'form-control', :placeholder => "Czy został sprzedany? Tak | Nie"
+          .field
+            = f.label t :sell_date
+            = f.text_field :sell_date, class: 'form-control', :placeholder => "Data sprzedaży"
       .col-md-6
         .form-group
           .field

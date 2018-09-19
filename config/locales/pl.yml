@@ -7,6 +7,7 @@ pl:
   buy_brutto: "Cena zakupu brutto"
   proof: "Dokument zakupu"
   buy_date: "Data zakupu"
+  sell_date: "Data sprzedaży"
   sold: "Sprzedany?"
   processor: "Procesor"
   ram: "Pamięć RAM"
