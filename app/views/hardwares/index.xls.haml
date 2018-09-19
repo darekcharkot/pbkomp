@@ -43,6 +43,8 @@
           %data{"ss:type" => "String"}= "Dowód zakupu"
         %cell
           %data{"ss:type" => "String"}= "Data zakupu"
+        %cell
+          %data{"ss:type" => "String"}= "Data sprzedaży"
       - @hardwares.each do |hardware|
         %row
           %cell
@@ -85,3 +87,5 @@
             %data{"ss:type" => "String"}= hardware.proof
           %cell
             %data{"ss:type" => "Datetime"}= hardware.buy_date
+          %cell
+            %data{"ss:type" => "Datetime"}= hardware.sell_date

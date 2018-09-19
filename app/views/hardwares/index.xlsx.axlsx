@@ -1,10 +1,10 @@
 wb = xlsx_package.workbook
 
 wb.add_worksheet(name: "Urządzenia w salonie") do |sheet|
-	sheet.add_row %w(name model sn describe foreign_code own_code buy_brutto sold processor ram disk screen dvd video_card battery operating_system warranty)
+	sheet.add_row %w(Typ Model Numer_seryjny Opis Numeracja_obca Numeracja_własna Cena_zakupu_brutto Data_sprzedaży Procesor Ram Dysk Wyświetlacz DVD Karta_graficzna Bateria System_operacyjny Gwarancja)
 
 	@hardwares.each do |hardware|
-		sheet.add_row [hardware.name, hardware.model, hardware.sn, hardware.describe, hardware.foreign_code, hardware.own_code, hardware.buy_brutto, hardware.sold, hardware.processor, hardware.ram, hardware.disk, hardware.screen, hardware.dvd, hardware.video_card, hardware.battery, hardware.operating_system, hardware.warranty]
+		sheet.add_row [hardware.name, hardware.model, hardware.sn, hardware.describe, hardware.foreign_code, hardware.own_code, hardware.buy_brutto, hardware.sell_date, hardware.processor, hardware.ram, hardware.disk, hardware.screen, hardware.dvd, hardware.video_card, hardware.battery, hardware.operating_system, hardware.warranty]
 	end
 end
      
