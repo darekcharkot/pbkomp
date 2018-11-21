@@ -80,6 +80,6 @@ class HardwaresController < ApplicationController
     def hardware_params
       params.require(:hardware).permit(:name, :model, :sn, :foreign_code, :own_code, :buy_brutto, :proof,
                      :buy_date, :sold, :sell_date, :created_at, :describe, :processor, :ram, :disk, :screen, :dvd,
-                     :video_card, :battery, :operating_system, :warranty)
+                     :video_card, :battery, :operating_system, :warranty, :price)
     end
 end

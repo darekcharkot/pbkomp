@@ -14,6 +14,7 @@
 			%th Bateria
 			%th System
 			%th Gwarancja
+			%th Cena
 
 	%tbody
 		- @hardwares.each do |hardware|
@@ -28,5 +29,10 @@
 				%td= hardware.video_card
 				%td= hardware.battery
 				%td= hardware.operating_system
-				%td= hardware.warranty
+				%td
+					-if hardware.warranty.empty?
+						= hardware.warranty
+					-else
+						= hardware.warranty + " miesiące"
+				%td= number_to_currency(hardware.price, locale: :pl, :unit => 'zł ', format: "%n %u", :delimiter => " ")
 %br
