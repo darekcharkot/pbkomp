@@ -1,0 +1,32 @@
+%h1 Lista urządzeń
+
+%table.table.table-inverse.table-striped.table-hover.text-center.table-responsive-lg
+	%thead.thead-dark
+		%tr
+			%th Nazwa
+			%th Model
+			%th Procesor
+			%th Pamięć RAM
+			%th Dysk
+			%th Matryca
+			%th DVD
+			%th Grafika
+			%th Bateria
+			%th System
+			%th Gwarancja
+
+	%tbody
+		- @hardwares.each do |hardware|
+			%tr
+				%td= hardware.name
+				%td= hardware.model
+				%td= hardware.processor
+				%td= hardware.ram
+				%td= hardware.disk
+				%td= hardware.screen
+				%td= hardware.dvd
+				%td= hardware.video_card
+				%td= hardware.battery
+				%td= hardware.operating_system
+				%td= hardware.warranty
+%br

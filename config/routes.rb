@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'pages/hardwares', to: 'hardwares#index'
 
+  get 'pages/offer'
+
   get 'pages/home'
 
   get 'pages/services'
