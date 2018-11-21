@@ -52,10 +52,10 @@ class HardwaresController < ApplicationController
     respond_to do |format|
       if @hardware.update(hardware_params)
         format.html { redirect_to @hardware, notice: 'Urządzenie zostało zaktualizowane pomyślnie.' }
-        format.json { render :show, status: :ok, location: @hardware }
+        # format.json { render :show, status: :ok, location: @hardware }
       else
         format.html { render :edit }
-        format.json { render json: @hardware.errors, status: :unprocessable_entity }
+        # format.json { render json: @hardware.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -66,7 +66,7 @@ class HardwaresController < ApplicationController
     @hardware.destroy
     respond_to do |format|
       format.html { redirect_to hardwares_url, notice: 'Urządzenie zostało usunięte.' }
-      format.json { head :no_content }
+      # format.json { head :no_content }
     end
   end
 

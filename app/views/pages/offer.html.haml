@@ -33,6 +33,6 @@
 					-if hardware.warranty.empty?
 						= hardware.warranty
 					-else
-						= hardware.warranty + " miesiące"
+						= hardware.warranty + " m-ce"
 				%td= number_to_currency(hardware.price, locale: :pl, :unit => 'zł ', format: "%n %u", :delimiter => " ")
 %br
