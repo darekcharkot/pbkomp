@@ -12,6 +12,11 @@ def self.to_csv(options = {})
     end
   end
 end
+before_save :downcase_fields
+
+def downcase_fields
+	self.sold.downcase!
+end
 end
 
 
