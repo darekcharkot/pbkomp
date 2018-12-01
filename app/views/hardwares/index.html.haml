@@ -1,4 +1,6 @@
 %h1 Lista urządzeń
+%h6= "Liczba wszystkich urządzeń: #{@hardwares.count}"
+%h6= "Liczba urządzeń nie sprzedanych: #{@hardwares_forsale.count}"
 %p 
   Pobierz:
   = link_to "Plik Excel", hardwares_path(format: "xlsx"), class: 'btn btn-outline-info btn-xm action_color'

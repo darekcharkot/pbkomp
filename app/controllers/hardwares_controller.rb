@@ -5,7 +5,7 @@ class HardwaresController < ApplicationController
   # GET /hardwares
   # GET /hardwares.json
   def index
-    # @hardwares = Hardware.where(:sold => ['nie', nil, '']).where.not(:sold => 'tak')
+    @hardwares_forsale = Hardware.where(:sold => ['nie', nil, '']).where.not(:sold => 'tak')
     @hardwares = Hardware.all.order(:created_at)
     respond_to do |format|
       format.html

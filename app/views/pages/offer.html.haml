@@ -1,4 +1,6 @@
-%h1 Lista urządzeń
+%h1 Oferta sprzedażowa
+
+%h6= "Liczba urządzeń w ofercie: #{@hardwares.count}"
 
 %table.table.table-inverse.table-striped.table-hover.text-center.table-responsive-lg
 	%thead.thead-dark
@@ -35,4 +37,3 @@
 					-else
 						= hardware.warranty + " m-ce"
 				%td= number_to_currency(hardware.price, locale: :pl, :unit => 'zł ', format: "%n %u", :delimiter => " ")
-%br
