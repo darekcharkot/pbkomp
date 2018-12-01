@@ -16,7 +16,6 @@ ActiveRecord::Schema.define(version: 20181121113828) do
   enable_extension "plpgsql"
 
   create_table "hardwares", force: :cascade do |t|
-    t.string "name"
     t.string "model"
     t.string "sn"
     t.text "describe"
@@ -37,8 +36,11 @@ ActiveRecord::Schema.define(version: 20181121113828) do
     t.string "warranty"
     t.string "proof"
     t.datetime "buy_date"
+    t.bigint "type_hardware_id"
+    t.string "name"
     t.datetime "sell_date"
     t.string "price"
+    t.index ["type_hardware_id"], name: "index_hardwares_on_type_hardware_id"
   end
 
   create_table "users", force: :cascade do |t|
