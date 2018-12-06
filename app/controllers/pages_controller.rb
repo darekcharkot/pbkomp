@@ -3,7 +3,7 @@ class PagesController < ApplicationController
   end
 
   def offer
-    @hardwares = Hardware.where(:sold => ['nie', nil, '']).where.not(:sold => 'tak')
+    @hardwares_forsale = Hardware.where(:sold => ['nie', nil, '']).where.not(:sold => 'tak')
   end
 
   def services

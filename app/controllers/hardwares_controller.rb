@@ -7,16 +7,16 @@ class HardwaresController < ApplicationController
   def index
     @hardwares_forsale = Hardware.where(:sold => ['nie', nil, '']).where.not(:sold => 'tak')
     @hardwares = Hardware.all.order(:created_at)
-    respond_to do |format|
-      format.html
-      format.csv { send_data @hardwares.to_csv }
-      format.xlsx
-      format.pdf do
-        render pdf: "Urządzenia w salonie",
-        template: "hardwares/index.html.haml",
-        layout: 'pdf.html.haml'
-      end
-    end
+    # respond_to do |format|
+    #   format.html
+    #   format.csv { send_data @hardwares.to_csv }
+    #   format.xlsx
+    #   format.pdf do
+    #     render pdf: "Urządzenia w salonie",
+    #     template: "hardwares/index.html.haml",
+    #     layout: 'pdf.html.haml'
+    #   end
+    # end
   end
 
   # GET /hardwares/1

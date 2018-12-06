@@ -1,6 +1,6 @@
 %h1 Oferta sprzedażowa
 
-%h6= "Liczba urządzeń w ofercie: #{@hardwares.count}"
+%h6= "Liczba urządzeń w ofercie: #{@hardwares_forsale.count}"
 
 %table.table.table-inverse.table-striped.table-hover.text-center.table-responsive-lg
 	%thead.thead-dark
@@ -19,7 +19,7 @@
 			%th Cena
 
 	%tbody
-		- @hardwares.each do |hardware|
+		- @hardwares_forsale.each do |hardware|
 			%tr
 				%td= hardware.name
 				%td= hardware.model

@@ -1,7 +1,7 @@
 %h1 Lista urządzeń
 %h6= "Liczba wszystkich urządzeń: #{@hardwares.count}"
 %h6= "Liczba urządzeń nie sprzedanych: #{@hardwares_forsale.count}"
-%p 
+%p
   Pobierz:
   = link_to "Plik Excel", hardwares_path(format: "xlsx"), class: 'btn btn-outline-info btn-xm action_color'
   |
@@ -24,18 +24,21 @@
   %tbody
     - @hardwares.each do |hardware|
       %tr
-        %td= hardware.name
+        - if hardware.sold == 'nie' || hardware.sold == '' || hardware.sold != 'tak'
+          %td.bgcolor= hardware.name
+        - else
+          %td
         %td= hardware.model
         %td= hardware.foreign_code
         %td= hardware.own_code
         - if hardware.sell_date.nil?
           %td= hardware.sell_date
-        - else 
+        - else
           %td= hardware.sell_date.strftime("%Y-%m-%d")
         %td= hardware.proof
         - if hardware.buy_date.nil?
           %td= hardware.buy_date
-        - else 
+        - else
           %td= hardware.buy_date.strftime("%Y-%m-%d")
         %td= button_to 'Pokaż', hardware, method: :get, class: 'btn btn-info btn-xm action_color'
         %td= button_to 'Edytuj', edit_hardware_path(hardware), method: :get, class: 'btn btn-warning btn-xm action_color'
