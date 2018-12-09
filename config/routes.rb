@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'pages/hardwares', to: 'hardwares#index'
+  get 'pages/hardwares'
 
   get 'pages/offer'
 

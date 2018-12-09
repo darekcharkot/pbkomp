@@ -16,6 +16,8 @@ class PagesController < ApplicationController
   end
 
   def hardwares
+    @hardwares = Hardware.all.order(:created_at)
+    @hardwares_forsale = Hardware.where(:sold => ['nie', nil, '']).where.not(:sold => 'tak')
   end
 
   def contact

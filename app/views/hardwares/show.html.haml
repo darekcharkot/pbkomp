@@ -43,7 +43,7 @@
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
             - if @hardware.buy_date.nil?
               = @hardware.buy_date
-            - else 
+            - else
               = @hardware.buy_date.strftime("%Y-%m-%d")
         .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Sprzedany?:
@@ -54,7 +54,7 @@
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
             - if @hardware.sell_date.nil?
               = @hardware.sell_date
-            - else 
+            - else
               = @hardware.sell_date.strftime("%Y-%m-%d")
         .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Cena sprzedaży:
@@ -109,4 +109,4 @@
         = @hardware.describe
 
     = link_to 'Edytuj', edit_hardware_path(@hardware), class: 'btn btn-info action_color'
-    = link_to 'Powrót', hardwares_path, class: 'btn btn-outline-warning action_color'
+    = link_to 'Powrót', pages_hardwares_path, class: 'btn btn-outline-warning action_color'
