@@ -1,39 +1,54 @@
-%h1 Oferta sprzedażowa
+%h2 Obecnie posiadamy w sprzedaży
 
 %h6= "Liczba urządzeń w ofercie: #{@hardwares_forsale.count}"
+%br
+%br
 
-%table.table.table-inverse.table-striped.table-hover.text-center.table-responsive-lg
-	%thead.thead-dark
-		%tr
-			%th Nazwa
-			%th Model
-			%th Procesor
-			%th Pamięć RAM
-			%th Dysk
-			%th Matryca
-			%th DVD
-			%th Grafika
-			%th Bateria
-			%th System
-			%th Gwarancja
-			%th Cena
+-# %table.table.table-inverse.table-striped.table-hover.text-center.table-responsive-lg
+-# 	%thead.thead-dark
+-# 		%tr
+-# 			%th Nazwa
+-# 			%th Model
+-# 			%th Procesor
+-# 			%th Pamięć RAM
+-# 			%th Dysk
+-# 			%th Matryca
+-# 			%th DVD
+-# 			%th Grafika
+-# 			%th Bateria
+-# 			%th System
+-# 			%th Gwarancja
+-# 			%th Cena
 
-	%tbody
-		- @hardwares_forsale.each do |hardware|
-			%tr
-				%td= hardware.name
-				%td= hardware.model
-				%td= hardware.processor
-				%td= hardware.ram
-				%td= hardware.disk
-				%td= hardware.screen
-				%td= hardware.dvd
-				%td= hardware.video_card
-				%td= hardware.battery
-				%td= hardware.operating_system
-				%td
-					-if hardware.warranty.empty?
-						= hardware.warranty
-					-else
-						= hardware.warranty + " m-ce"
-				%td= number_to_currency(hardware.price, locale: :pl, :unit => 'zł ', format: "%n %u", :delimiter => " ")
+-# 	%tbody
+-# 		- @hardwares_forsale.each do |hardware|
+-# 			%tr
+-# 				%td= hardware.name
+-# 				%td= hardware.model
+-# 				%td= hardware.processor
+-# 				%td= hardware.ram
+-# 				%td= hardware.disk
+-# 				%td= hardware.screen
+-# 				%td= hardware.dvd
+-# 				%td= hardware.video_card
+-# 				%td= hardware.battery
+-# 				%td= hardware.operating_system
+-# 				%td
+-# 					-if hardware.warranty.empty?
+-# 						= hardware.warranty
+-# 					-else
+-# 						= hardware.warranty + " m-ce"
+-# 				%td= number_to_currency(hardware.price, locale: :pl, :unit => 'zł ', format: "%n %u", :delimiter => " ")
+
+.wrapper
+	- @hardwares_forsale.each do |hardware,i|
+		.product-item
+			%img.photo{:src => "./../../assets/images/6.jpg", :alt => "Foto niedostępne"}/
+			.describe-item
+				.name-item= link_to hardware.model, hardware_item_path(hardware.id)
+				%br
+				%p= "Procesor #{hardware.processor}"
+				%p= "Pamięć #{hardware.ram}"
+				%p= "Dysk #{hardware.disk}"
+				%p= "Grafika #{hardware.video_card}"
+				%p.prize= number_to_currency(hardware.price, locale: :pl, :unit => 'zł ', format: "%n %u", :delimiter => " ")

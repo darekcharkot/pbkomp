@@ -1,4 +1,6 @@
 class PagesController < ApplicationController
+  before_action :set_hardware, only: [:show, :edit, :update, :destroy]
+
   def home
   end
 
@@ -20,8 +22,16 @@ class PagesController < ApplicationController
     @hardwares_forsale = Hardware.where(:sold => ['nie', nil, '']).where.not(:sold => 'tak')
   end
 
+  def hardware_item
+    @hardware = Hardware.find(params[:id])
+  end
+
   def contact
   end
 
   private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_hardware
+    @hardware = Hardware.find(params[:id])
+  end
 end
