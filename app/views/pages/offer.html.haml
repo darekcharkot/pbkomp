@@ -43,7 +43,7 @@
 .wrapper
 	- @hardwares_forsale.each do |hardware,i|
 		.product-item
-			%img.photo{:src => "./../../assets/images/6.jpg", :alt => "Foto niedostępne"}/
+			%img.photo{:src => "http://placehold.it/300x250?text=Foto PBKOMP", :alt => "Foto niedostępne"}/
 			.describe-item
 				.name-item= link_to hardware.model, hardware_item_path(hardware.id)
 				%br
