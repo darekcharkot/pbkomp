@@ -1,0 +1,21 @@
+development:
+  cloud_name: "pbkomp"
+  api_key: "962854857837114"
+  api_secret: "gNuyPJU9WiXBRUNsAr3krqEp90A"
+  enhance_image_tag: true
+  static_image_support: false
+  secure: true
+production:
+  cloud_name: "pbkomp"
+  api_key: "962854857837114"
+  api_secret: "gNuyPJU9WiXBRUNsAr3krqEp90A"
+  enhance_image_tag: true
+  static_image_support: true
+  secure: true
+test:
+  cloud_name: "pbkomp"
+  api_key: "962854857837114"
+  api_secret: "gNuyPJU9WiXBRUNsAr3krqEp90A"
+  enhance_image_tag: true
+  static_image_support: false
+  secure: true

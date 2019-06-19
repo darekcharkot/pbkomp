@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :images, only: [:destroy]
+
   get 'pages/hardwares'
 
   get 'pages/offer'

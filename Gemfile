@@ -48,6 +48,10 @@ gem 'axlsx_rails'
 gem 'wicked_pdf', '~> 1.1'
 gem 'wkhtmltopdf-binary'
 
+# gems to upload fotos to hardware
+gem 'carrierwave'
+gem 'cloudinary'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

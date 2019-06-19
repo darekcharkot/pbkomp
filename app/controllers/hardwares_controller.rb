@@ -17,6 +17,8 @@ class HardwaresController < ApplicationController
     #     layout: 'pdf.html.haml'
     #   end
     # end
+    @hardware = Hardware.new
+    @image = @hardware.images.build
   end
 
   # def forsale
@@ -44,6 +46,11 @@ class HardwaresController < ApplicationController
 
     respond_to do |format|
       if @hardware.save
+        if params[:images]
+          params[:images].each do |image|
+            @hardware.images.create(image: image)
+          end
+        end
         format.html { redirect_to @hardware, notice: 'Urządzenie zostało dodane pomyślnie.' }
       else
         format.html { render :new }
@@ -56,6 +63,11 @@ class HardwaresController < ApplicationController
   def update
     respond_to do |format|
       if @hardware.update(hardware_params)
+        if params[:images]
+          params[:images].each do |image|
+            @hardware.images.create(image: image)
+          end
+        end
         format.html { redirect_to @hardware, notice: 'Urządzenie zostało zaktualizowane pomyślnie.' }
         format.json { render :show, status: :ok, location: @hardware }
       else
@@ -85,6 +97,6 @@ class HardwaresController < ApplicationController
     def hardware_params
       params.require(:hardware).permit(:name, :model, :sn, :foreign_code, :own_code, :buy_brutto, :proof,
                      :buy_date, :sold, :sell_date, :created_at, :describe, :processor, :ram, :disk, :screen, :dvd,
-                     :video_card, :battery, :operating_system, :warranty, :price)
+                     :video_card, :battery, :operating_system, :warranty, :price, images_attributes: [:image, :hardware_id])
     end
 end

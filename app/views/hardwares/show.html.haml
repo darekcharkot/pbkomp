@@ -107,6 +107,11 @@
       %span{:style => "font-size: 1.25rem"}
       %span.card-text{:style => "font-size: 1rem"}
         = @hardware.describe
-
+    
+    .row
+      .col-md-12
+        %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Zdjęcia:
+        - @hardware.images.each do |image|
+          = image_tag image.image_url(:hardwares_image)
     = link_to 'Edytuj', edit_hardware_path(@hardware), class: 'btn btn-info action_color'
     = link_to 'Powrót', hardwares_path, class: 'btn btn-outline-warning action_color'

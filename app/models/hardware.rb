@@ -1,4 +1,7 @@
 class Hardware < ApplicationRecord
+  
+has_many :images, :dependent => :destroy
+accepts_nested_attributes_for :images, allow_destroy: true
 require 'csv'
 validates_presence_of :name, message: 'Wpisz jakie to urządzenie'
 def self.to_csv(options = {})

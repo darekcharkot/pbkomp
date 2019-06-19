@@ -1,5 +1,5 @@
 .card{:style => "margin: 25px;padding: 15px; background-color: #cccccc;"}
-  = form_for @hardware do |f|
+  = form_for(@hardware, :html => { multipart: true }) do |f|
     - if @hardware.errors.any?
       #error_explanation
         %h2= "#{pluralize(@hardware.errors.count, "błędy")} uniemożliwiły dodanie urządzenia do bazy:"
@@ -77,5 +77,18 @@
         .field
           = f.label t :describe
           = f.text_area :describe, class: 'form-control', :placeholder => "Dodatkowe informacje"
+    .row
+      .col-md-12
+        = f.fields_for :image do |ff|
+          .field
+            = ff.label :image
+            %br/
+            = ff.file_field :image, multiple: true, name: "images[]"
+            %br/
+
+            - @hardware.images.each do |image|
+              = image_tag image.image_url(:hardwares_image)
+              %h5= link_to "Delete", image_path(image), :method => :delete
+
         .actions
         = f.submit 'Zatwierdź zmiany', class: 'btn btn-success btn-lg add_hardware_button'
