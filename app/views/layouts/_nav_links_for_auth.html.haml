@@ -1,31 +1,31 @@
 #nav-content.collapse.navbar-collapse
 	%ul.navbar-nav.text-uppercase
 		- if current_user
-			%li.nav-item
-				%a.nav-link= link_to 'Start', root_path
+			/ %li.nav-item
+			/ 	%a.nav-link= link_to 'Start', root_path
 			%li.nav-item
 				%a.nav-link= link_to 'Oferta', pages_offer_path
-			%li.nav-item
-				%a.nav-link= link_to 'Usługi', pages_services_path
-			%li.nav-item
-				%a.nav-link= link_to 'Cennik', pages_pricelist_path
-			%li.nav-item
-				%a.nav-link= link_to 'Technologie', pages_technology_path
+			/ %li.nav-item
+			/ 	%a.nav-link= link_to 'Usługi', pages_services_path
+			/ %li.nav-item
+			/ 	%a.nav-link= link_to 'Cennik', pages_pricelist_path
+			/ %li.nav-item
+			/ 	%a.nav-link= link_to 'Technologie', pages_technology_path
 			%li.nav-item
 				%a.nav-link= link_to 'Kontakt', pages_contact_path
 			%li.nav-item
 				%a.nav-link= link_to 'Lista urządzeń', hardwares_path
 		- else
-			%li.nav-item
-				%a.nav-link= link_to 'Start', root_path
+			/ %li.nav-item
+			/ 	%a.nav-link= link_to 'Start', root_path
 			%li.nav-item
 				%a.nav-link= link_to 'Oferta', pages_offer_path
-			%li.nav-item
-				%a.nav-link= link_to 'Usługi', pages_services_path
-			%li.nav-item
-				%a.nav-link= link_to 'Cennik', pages_pricelist_path
-			%li.nav-item
-				%a.nav-link= link_to 'Technologie', pages_technology_path
+			/ %li.nav-item
+			/ 	%a.nav-link= link_to 'Usługi', pages_services_path
+			/ %li.nav-item
+			/ 	%a.nav-link= link_to 'Cennik', pages_pricelist_path
+			/ %li.nav-item
+			/ 	%a.nav-link= link_to 'Technologie', pages_technology_path
 			%li.nav-item
 				%a.nav-link= link_to 'Kontakt', pages_contact_path
 	%ul.navbar-nav.ml-auto
