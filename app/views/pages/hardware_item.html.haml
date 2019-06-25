@@ -4,16 +4,18 @@
 
     %p
       %b.card-text{:style => "font-size: 1.625rem; text-decoration: underline;"}
-        = @hardware.name
+        = @hardware.name + " " + @hardware.model
     .row{:style => "background-color: #cccccc; padding: 20px 10px; margin-bottom: 35px;"}
       .col-md-6
         .row
           %h4.col-md-12{:style => "margin-bottom: 0.7rem; margin: 12px 10px; color: #4a79b1;"} Informacje:
         .row
-          %img.photo{:src => "http://placehold.it/640x480?text=Foto PBKOMP", :alt => "Foto niedostępne"}/
+          .col-md-12
+            - @hardware.images.limit(1).each do |image|
+              = image_tag image.image_url(:hardwares_image_first), :style => "margin: 0.5rem; border: 1px solid; box-shadow: 5px 5px 4px grey;"
         .row
-          %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Cena sprzedaży:
-          %b.card-text.col-md-7{:style => "font-size: 1rem"}
+          %span.col-md-6{:style => "font-size: 1.25rem; margin: 2rem auto;"} Cena sprzedaży:
+          %b.card-text.col-md-6{:style => "font-size: 1rem; margin: 2rem auto;"}
             = number_to_currency(@hardware.price, locale: :pl, :unit => 'zł ', format: "%n %u", :delimiter => " ")
       .col-md-6
         .row
@@ -57,5 +59,10 @@
               = @hardware.warranty
             -else
               = @hardware.warranty + " m-ce"
-
+      .col-md-12
+        .row
+          %h4.col-md-12{:style => "margin-bottom: 0.7rem; margin: 12px 10px; color: #4a79b1;"} Zdjęcia:
+          - @hardware.images.each do |image|
+            = image_tag image.image_url(:hardwares_image_big), :style => "margin: 0.3rem; border: 3px solid orange; box-shadow: 5px 5px 4px grey;"          
+    
     = link_to 'Powrót', pages_offer_path, class: 'btn btn-outline-warning action_color'

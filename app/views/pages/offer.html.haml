@@ -3,45 +3,8 @@
 %h6= "Liczba urządzeń w ofercie: #{@hardwares_forsale.count}"
 %br
 %br
-
--# %table.table.table-inverse.table-striped.table-hover.text-center.table-responsive-lg
--# 	%thead.thead-dark
--# 		%tr
--# 			%th Nazwa
--# 			%th Model
--# 			%th Procesor
--# 			%th Pamięć RAM
--# 			%th Dysk
--# 			%th Matryca
--# 			%th DVD
--# 			%th Grafika
--# 			%th Bateria
--# 			%th System
--# 			%th Gwarancja
--# 			%th Cena
-
--# 	%tbody
--# 		- @hardwares_forsale.each do |hardware|
--# 			%tr
--# 				%td= hardware.name
--# 				%td= hardware.model
--# 				%td= hardware.processor
--# 				%td= hardware.ram
--# 				%td= hardware.disk
--# 				%td= hardware.screen
--# 				%td= hardware.dvd
--# 				%td= hardware.video_card
--# 				%td= hardware.battery
--# 				%td= hardware.operating_system
--# 				%td
--# 					-if hardware.warranty.empty?
--# 						= hardware.warranty
--# 					-else
--# 						= hardware.warranty + " m-ce"
--# 				%td= number_to_currency(hardware.price, locale: :pl, :unit => 'zł ', format: "%n %u", :delimiter => " ")
-
 .wrapper
-	- @hardwares_forsale.each do |hardware,i|
+	- @hardwares_forsale.each do |hardware|
 		.product-item
 			%img.photo{:src => "http://placehold.it/300x250?text=Foto PBKOMP", :alt => "Foto niedostępne"}/
 			.describe-item

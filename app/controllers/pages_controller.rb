@@ -1,13 +1,11 @@
 class PagesController < ApplicationController
-  before_action :set_hardware, only: [:show, :edit, :update, :destroy]
+  before_action :set_hardware, only: [:hardware_item, :show, :edit, :update, :destroy]
 
   def home
   end
 
   def offer
     @hardwares_forsale = Hardware.where(:sold => ['nie', nil, '']).where.not(:sold => 'tak')
-    @hardware = Hardware.new
-    @image = @hardware.images.build
   end
 
   def services
@@ -25,7 +23,6 @@ class PagesController < ApplicationController
   end
 
   def hardware_item
-    @hardware = Hardware.find(params[:id])
   end
 
   def contact
