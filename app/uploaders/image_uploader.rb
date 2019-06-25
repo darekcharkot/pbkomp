@@ -11,7 +11,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   end
 
   version :hardwares_image_first do
-    process :resize_to_fill => [370, 300]
+    process :resize_to_fit => [370, 300]
   end
 
   def extension_white_list
