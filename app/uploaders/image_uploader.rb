@@ -3,7 +3,7 @@ class ImageUploader < CarrierWave::Uploader::Base
   include Cloudinary::CarrierWave
 
   version :hardwares_image do
-    process :resize_to_fill => [60, 60]
+    process :resize_to_fit => [320, 230]
   end
 
   version :hardwares_image_big do

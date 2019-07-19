@@ -6,9 +6,12 @@
 .wrapper
 	- @hardwares_forsale.each do |hardware|
 		.product-item
-			%img.photo{:src => "http://placehold.it/300x250?text=Foto PBKOMP", :alt => "Foto niedostępne"}/
+			.row
+				.col-md-12
+					-hardware.images.limit(1).each do |img|
+						= cl_image_tag img.image_url(:hardwares_image), :style => "margin: 0.5rem; border: 1px solid; box-shadow: 5px 5px 4px grey;"
 			.describe-item
-				.name-item= link_to hardware.model, hardware_item_path(hardware.id)
+				.name-item= link_to hardware.name + " " + hardware.model, hardware_item_path(hardware.id)
 				%br
 				%p= "Procesor #{hardware.processor}"
 				%p= "Pamięć #{hardware.ram}"

@@ -59,7 +59,7 @@
         .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Cena sprzedaży:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
-            = @hardware.price
+            = number_to_currency(@hardware.price, locale: :pl, :unit => 'zł ', format: "%n %u", :delimiter => " ")
       .col-md-6
         .row
           %h4.col-md-12.center{:style => "margin-bottom: 0.7rem; margin: 12px 10px; color: #4a79b1"} Parametry:
