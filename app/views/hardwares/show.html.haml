@@ -3,17 +3,17 @@
     %p#notice= notice
 
     %p
-      %b.card-text{:style => "font-size: 1.625rem; text-decoration: underline;"}
-        = @hardware.name
+      %b.card-text.font-lucida{:style => "font-size: 1.625rem; text-decoration: underline;"}
+        = "#{@hardware.name} #{@hardware.model}"
       .row
         .col-md-12
-          %h7.col-md-3 Dodany:
+          %h7.col-md-3.font-lucida Dodany:
           %h7.card-text.col-md-9
             = @hardware.created_at.strftime("%Y-%m-%d")
     .row{:style => "background-color: #cccccc; padding: 20px 10px;"}
       .col-md-6
         .row
-          %h4.col-md-12{:style => "margin-bottom: 0.7rem; margin: 12px 10px; color: #4a79b1;"} Informacje:
+          %h4.col-md-12.font-lucida{:style => "margin-bottom: 0.7rem; margin: 12px 10px; color: #4a79b1;"} Informacje:
         .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Model:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
@@ -62,7 +62,7 @@
             = number_to_currency(@hardware.price, locale: :pl, :unit => 'zł ', format: "%n %u", :delimiter => " ")
       .col-md-6
         .row
-          %h4.col-md-12.center{:style => "margin-bottom: 0.7rem; margin: 12px 10px; color: #4a79b1"} Parametry:
+          %h4.col-md-12.center.font-lucida{:style => "margin-bottom: 0.7rem; margin: 12px 10px; color: #4a79b1"} Parametry:
         .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Procesor:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
@@ -102,16 +102,20 @@
               = @hardware.warranty
             -else
               = @hardware.warranty + " m-ce"
-    %p{:style => "font-size: 1.25rem; margin-top: 35px"} Dodatkowe informacje:
-    %p{:style => "border: 2px #676767 solid; box-shadow: 5px 5px 7px #898989; padding: 12px; margin-bottom: 35px"}
-      %span{:style => "font-size: 1.25rem"}
-      %span.card-text{:style => "font-size: 1rem"}
-        = @hardware.describe
+    - if @hardware.describe == ""
+    - else
+      %p.font-lucida{:style => "font-size: 1.25rem; margin-top: 35px"} Dodatkowe informacje:
+      %p{:style => "border: 2px #676767 solid; box-shadow: 5px 5px 7px #898989; padding: 12px; margin-bottom: 35px"}
+        %span{:style => "font-size: 1.25rem"}
+        %span.card-text{:style => "font-size: 1rem"}
+          = @hardware.describe
     
-    .row
+    .row{:style => "margin: 3rem auto 0.5rem auto"}
       .col-md-12
-        %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Zdjęcia:
+        %span.col-md-5.font-lucida{:style => "font-size: 1.25rem; color: #575757; font-weight: bold; margin: 1rem auto"} Zdjęcia:
+        %br
+        %br
         - @hardware.images.each do |image|
-          = image_tag image.image_url(:hardwares_image)
+          = image_tag image.image_url(:hardwares_image), {:style => "margin: 0.2rem"}
     = link_to 'Edytuj', edit_hardware_path(@hardware), class: 'btn btn-info action_color'
     = link_to 'Powrót', hardwares_path, class: 'btn btn-outline-warning action_color'

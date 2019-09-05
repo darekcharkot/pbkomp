@@ -12,25 +12,25 @@
         .form-group
           .field
             = f.label t :name
-            = f.text_field :name, class: 'form-control', :placeholder => "Typ urządzenia"
+            = f.text_field :name, class: 'form-control', :placeholder => "Wpisz typ"
           .field
             = f.label t :model
-            = f.text_field :model, class: 'form-control', :placeholder => "Model urządzenia"
+            = f.text_field :model, class: 'form-control', :placeholder => "Wpisz model"
           .field
             = f.label t :sn
-            = f.text_field :sn, class: 'form-control', :placeholder => "Numer seryjny"
+            = f.text_field :sn, class: 'form-control', :placeholder => "Wpisz S/N"
           .field
             = f.label t :foreign_code
-            = f.text_field :foreign_code, class: 'form-control', :placeholder => "Numer obcy"
+            = f.text_field :foreign_code, class: 'form-control', :placeholder => "Wpisz numer obcy"
           .field
             = f.label t :own_code
-            = f.text_field :own_code, class: 'form-control', :placeholder => "Numer własny"
+            = f.text_field :own_code, class: 'form-control', :placeholder => "Wpisz numer własny"
           .field
             = f.label t :buy_brutto
-            = f.text_field :buy_brutto, class: 'form-control', :placeholder => "Cena zakupu brutto"
+            = f.text_field :buy_brutto, class: 'form-control', :placeholder => "Podaj cenę zakupu brutto"
           .field
             = f.label t :proof
-            = f.text_field :proof, class: 'form-control', :placeholder => "Dokument zakupu"
+            = f.text_field :proof, class: 'form-control', :placeholder => "Wprowadź dokument zakupu"
           .field
             = f.label t :buy_date
             = f.text_field :buy_date, "data-provide" => 'datepicker', class: 'form-control', :placeholder => "Kliknij w pole aby wprowadzić datę zakupu"
@@ -42,46 +42,46 @@
             = f.text_field :sell_date, "data-provide" => 'datepicker', class: 'form-control', :placeholder => "Kliknij w pole aby wprowadzić datę sprzedaży"
           .field
             = f.label t :price
-            = f.text_field :price, class: 'form-control', :placeholder => "Cena sprzedaży"
+            = f.text_field :price, class: 'form-control', :placeholder => "Podaj cenę sprzedaży"
       .col-md-6
         .form-group
           .field
             = f.label t :processor
-            = f.text_field :processor, class: 'form-control', :placeholder => "Procesor"
+            = f.text_field :processor, class: 'form-control'
           .field
             = f.label t :ram
-            = f.text_field :ram, class: 'form-control', :placeholder => "Pamięć RAM"
+            = f.text_field :ram, class: 'form-control'
           .field
             = f.label t :disk
-            = f.text_field :disk, class: 'form-control', :placeholder => "Dysk"
+            = f.text_field :disk, class: 'form-control'
           .field
             = f.label t :screen
-            = f.text_field :screen, class: 'form-control', :placeholder => "Matryca"
+            = f.text_field :screen, class: 'form-control'
           .field
             = f.label t :dvd
-            = f.text_field :dvd, class: 'form-control', :placeholder => "Napęd DVD"
+            = f.text_field :dvd, class: 'form-control'
           .field
             = f.label t :video_card
-            = f.text_field :video_card, class: 'form-control', :placeholder => "Karta graficzna"
+            = f.text_field :video_card, class: 'form-control'
           .field
             = f.label t :battery
-            = f.text_field :battery, class: 'form-control', :placeholder => "Bateria"
+            = f.text_field :battery, class: 'form-control'
           .field
             = f.label t :operating_system
-            = f.text_field :operating_system, class: 'form-control', :placeholder => "System operacyjny"
+            = f.text_field :operating_system, class: 'form-control'
           .field
             = f.label t :warranty
-            = f.text_field :warranty, class: 'form-control', :placeholder => "Gwarancja"
+            = f.text_field :warranty, class: 'form-control'
     .row
       .col-md-12
         .field
           = f.label t :describe
-          = f.text_area :describe, class: 'form-control', :placeholder => "Dodatkowe informacje"
+          = f.text_area :describe, class: 'form-control', :placeholder => "Tutaj mozesz wpisać dodatkowe informacje na temat tego urządzenia"
     .row
       .col-md-12
         = f.fields_for :image do |ff|
           .field
-            = ff.label :image
+            = ff.label t :image
             %br/
             = ff.file_field :image, multiple: true, name: "images[]"
             %br/

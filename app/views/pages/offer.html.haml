@@ -11,7 +11,7 @@
 					-hardware.images.limit(1).each do |img|
 						= link_to(cl_image_tag(img.image_url(:hardwares_image), :style => "margin: 0.5rem; border: 1px solid; box-shadow: 5px 5px 4px grey;"), hardware_item_path(hardware.id))
 			.describe-item
-				.name-item= link_to hardware.name + " " + hardware.model, hardware_item_path(hardware.id)
+				.name-item= link_to "#{hardware.name} #{hardware.model}", hardware_item_path(hardware.id)
 				%br
 				%p= "Procesor #{hardware.processor}"
 				%p= "Pamięć #{hardware.ram}"
