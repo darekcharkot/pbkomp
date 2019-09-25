@@ -6,17 +6,17 @@ class HardwaresController < ApplicationController
   # GET /hardwares.json
   def index
     @hardwares = Hardware.where(:sold => ['nie', nil, '']).where.not(:sold => 'tak')
-    # @hardwares = Hardware.all.order(:created_at)
-    # respond_to do |format|
-    #   format.html
-    #   format.csv { send_data @hardwares.to_csv }
-    #   format.xlsx
-    #   format.pdf do
-    #     render pdf: "Urządzenia w salonie",
-    #     template: "hardwares/index.html.haml",
-    #     layout: 'pdf.html.haml'
-    #   end
-    # end
+    @hardwares = Hardware.all.order(:created_at)
+    respond_to do |format|
+      format.html
+      format.csv { send_data @hardwares.to_csv }
+      format.xlsx
+      format.pdf do
+        render pdf: "Urządzenia w salonie",
+        template: "hardwares/index.html.haml",
+        layout: 'pdf.html.haml'
+      end
+    end
     @hardware = Hardware.new
     @image = @hardware.images.build
   end
