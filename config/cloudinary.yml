@@ -5,6 +5,7 @@ development:
   enhance_image_tag: true
   static_image_support: false
   secure: true
+  cache_storage: :file
 production:
   cloud_name: "pbkomp"
   api_key: "962854857837114"
@@ -12,6 +13,7 @@ production:
   enhance_image_tag: true
   static_image_support: true
   secure: true
+  cache_storage: :file
 test:
   cloud_name: "pbkomp"
   api_key: "962854857837114"
@@ -19,3 +21,4 @@ test:
   enhance_image_tag: true
   static_image_support: false
   secure: true
+  cache_storage: :file
