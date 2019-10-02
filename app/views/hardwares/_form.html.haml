@@ -83,6 +83,7 @@
           .field
             = ff.label t :image
             %br/
+            = ff.hidden_field :image_cache
             = ff.file_field :image, multiple: true, name: "images[]"
             %br/
 
