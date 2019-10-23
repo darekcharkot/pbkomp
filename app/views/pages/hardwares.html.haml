@@ -2,9 +2,9 @@
 %h6= "Liczba urządzeń nie sprzedanych: #{@hardwares_forsale.count}"
 .row
   .col-md-3
-    = button_to 'Dodaj nowe urządzenie', new_hardware_path, method: :get, class: 'btn btn-success btn-lg add_hardware_button margin_bottom_15'
+    %div{:style => "text-align:left"}= button_to 'Dodaj nowe urządzenie', new_hardware_path, method: :get, class: 'btn btn-success btn-lg add_hardware_button margin_bottom_15'
   .col-md-5
-    %div{:style => "text-align:center"}= link_to 'Kliknij aby wyświetlić wszystkie urządzenia', hardwares_path, class: 'btn btn-info btn-xm action_color_forsale margin_bottom_15'
+    %div{:style => "text-align:center; font-size:18px;"}= link_to 'Wyświetl wszystkie urządzenia', hardwares_path, class: 'btn btn-info btn-xm action_color_forsale margin_bottom_15'
   .col-md-4
     %p{:style => "text-align:right"}
       Pobierz:
