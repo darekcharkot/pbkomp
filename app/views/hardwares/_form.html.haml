@@ -33,13 +33,13 @@
             = f.text_field :proof, class: 'form-control', :placeholder => "Wprowadź dokument zakupu"
           .field
             = f.label t :buy_date
-            = f.text_field :buy_date.strftime("%Y-%m-%d"), class: 'form-control', :placeholder => "Kliknij w pole aby wprowadzić datę zakupu"
+            = f.text_field :buy_date, value: ( l @hardware.buy_date if @hardware.buy_date? ) , class: 'form-control', :placeholder => "Kliknij w pole aby wprowadzić datę zakupu"
           .field
             = f.label t :sold
             = f.text_field :sold, class: 'form-control', :placeholder => "Czy został sprzedany? Tak | Nie"
           .field
             = f.label t :sell_date
-            = f.text_field :sell_date.strftime("%Y-%m-%d"), class: 'form-control', :placeholder => "Kliknij w pole aby wprowadzić datę sprzedaży"
+            = f.text_field :sell_date, value: ( l @hardware.sell_date if @hardware.sell_date? ) , class: 'form-control', :placeholder => "Kliknij w pole aby wprowadzić datę sprzedaży"
           .field
             = f.label t :price
             = f.text_field :price, class: 'form-control', :placeholder => "Podaj cenę sprzedaży"

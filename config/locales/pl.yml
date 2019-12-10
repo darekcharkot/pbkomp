@@ -21,4 +21,8 @@ pl:
   describe: "Dodatkowe informacje"
   price: "Cena sprzedaży"
   image: "Zdjęcia"
-  Choose Files: "Wybierz pliki" 
+  Choose Files: "Wybierz pliki"
+
+  time:
+    formats:
+      default: "%d/%m/%Y"

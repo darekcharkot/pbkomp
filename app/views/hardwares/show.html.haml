@@ -44,7 +44,7 @@
             - if @hardware.buy_date.nil?
               = @hardware.buy_date
             - else
-              = @hardware.buy_date.strftime("%Y-%m-%d")
+              = @hardware.buy_date.strftime("%d/%m/%Y")
         .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Sprzedany?:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
@@ -55,7 +55,7 @@
             - if @hardware.sell_date.nil?
               = @hardware.sell_date
             - else
-              = @hardware.sell_date.strftime("%Y-%m-%d")
+              = @hardware.sell_date.strftime("%d/%m/%Y")
         .row
           %span.col-md-5{:style => "font-size: 1.25rem; margin-bottom: 0.7rem"} Cena sprzedaży:
           %b.card-text.col-md-7{:style => "font-size: 1rem"}
